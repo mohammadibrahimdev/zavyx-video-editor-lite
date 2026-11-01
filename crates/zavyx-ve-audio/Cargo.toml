@@ -1,0 +1,26 @@
+[package]
+name = "zavyx-ve-audio"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Zavyx Video Editor — audio mixer, playback, audio effects"
+
+[dependencies]
+zavyx-ve-core = { workspace = true }
+thiserror     = { workspace = true }
+anyhow        = { workspace = true }
+parking_lot   = { workspace = true }
+crossbeam-channel = { workspace = true }
+log           = { workspace = true }
+num-rational  = { workspace = true }
+
+# cpal pulls in asio/ WASAPI on Windows. Pure-Rust mixing math lives in `mixer`
+# and is fully testable without a real audio device.
+cpal   = { version = "0.15", optional = true }
+rubato = { version = "0.16", optional = true }
+
+[features]
+default = []
+playback = ["dep:cpal", "dep:rubato"]

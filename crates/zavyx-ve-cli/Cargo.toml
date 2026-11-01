@@ -1,0 +1,22 @@
+[package]
+name = "zavyx-ve-cli"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Zavyx Video Editor — headless render CLI"
+
+[[bin]]
+name = "zavyx-ve-cli"
+path = "src/main.rs"
+
+[dependencies]
+zavyx-ve-core   = { workspace = true }
+zavyx-ve-media  = { workspace = true }
+zavyx-ve-render = { workspace = true }
+anyhow      = { workspace = true }
+clap        = { workspace = true }
+log         = { workspace = true }
+env_logger  = { workspace = true }
+serde_json  = { workspace = true }

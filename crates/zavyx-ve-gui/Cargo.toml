@@ -1,0 +1,36 @@
+[package]
+name = "zavyx-ve-gui"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Zavyx Video Editor — egui/eframe desktop app (ZavyxVE.exe)"
+
+[[bin]]
+name = "ZavyxVE"
+path = "src/main.rs"
+
+[dependencies]
+zavyx-ve-core   = { workspace = true }
+zavyx-ve-media  = { workspace = true }
+zavyx-ve-render = { workspace = true }
+zavyx-ve-audio  = { workspace = true }
+zavyx-ve-ai     = { workspace = true }
+anyhow      = { workspace = true }
+parking_lot = { workspace = true }
+log         = { workspace = true }
+env_logger  = { workspace = true }
+egui        = "0.29"
+eframe      = { version = "0.29", default-features = false, features = ["glow", "accesskit", "default_fonts"] }
+egui_extras = { version = "0.29", features = ["image"] }
+image       = { version = "0.25", default-features = false, features = ["png"] }
+rfd         = "0.15"
+cpal        = "0.15"
+crossbeam-channel = { workspace = true }
+egui-phosphor = "0.7"
+serde       = { workspace = true }
+serde_json  = { workspace = true }
+
+[build-dependencies]
+winresource = "0.1"

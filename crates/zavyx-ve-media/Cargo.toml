@@ -1,0 +1,26 @@
+[package]
+name = "zavyx-ve-media"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Zavyx Video Editor — FFmpeg-backed decode/encode/probe/cache"
+
+[dependencies]
+zavyx-ve-core = { workspace = true }
+serde       = { workspace = true }
+serde_json  = { workspace = true }
+thiserror   = { workspace = true }
+anyhow      = { workspace = true }
+parking_lot = { workspace = true }
+log         = { workspace = true }
+
+# FFmpeg — optional in Phase 1 so the skeleton compiles without DLLs.
+# Phase 2+ enables it: ffmpeg-next = "7.0"
+ffmpeg-next = { version = "7.0", optional = true }
+
+[features]
+default = []
+# Link FFmpeg dynamically. Requires FFMPEG_DIR or system pkg-config.
+ffmpeg = ["dep:ffmpeg-next"]

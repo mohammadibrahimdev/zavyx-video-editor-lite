@@ -1,0 +1,25 @@
+[package]
+name = "zavyx-ve-ai"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Zavyx Video Editor — optional local AI features (Whisper captions, ONNX segmentation, Piper TTS)"
+
+[dependencies]
+zavyx-ve-core = { workspace = true }
+thiserror     = { workspace = true }
+anyhow        = { workspace = true }
+log           = { workspace = true }
+
+# All AI deps are optional and gated behind the `ai` feature.
+# They pull in C++ runtimes (whisper.cpp, onnxruntime) and are only built
+# when the user opts in. On 32-bit Windows, the feature compiles but
+# `ai::available()` returns false at runtime.
+whisper-rs = { version = "0.13", optional = true }
+ort        = { version = "2.0.0-rc.15", optional = true }
+
+[features]
+default = []
+ai = ["dep:whisper-rs", "dep:ort"]

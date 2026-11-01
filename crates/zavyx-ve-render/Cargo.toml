@@ -1,0 +1,27 @@
+[package]
+name = "zavyx-ve-render"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Zavyx Video Editor — compositor and effect graph (GPU wgpu + CPU rayon)"
+
+[dependencies]
+zavyx-ve-core  = { workspace = true }
+zavyx-ve-media = { workspace = true }
+num-rational   = { workspace = true }
+num-traits     = { workspace = true }
+thiserror      = { workspace = true }
+anyhow         = { workspace = true }
+parking_lot    = { workspace = true }
+rayon          = { workspace = true }
+log            = { workspace = true }
+ab_glyph       = "0.2"
+
+# GPU path (Phase 5+). Kept optional so Phase 1 compiles without Vulkan/D3D tooling.
+wgpu = { version = "22.0", optional = true }
+
+[features]
+default = []
+wgpu = ["dep:wgpu"]

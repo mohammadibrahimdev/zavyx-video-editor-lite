@@ -1,0 +1,23 @@
+# Build output
+/target/
+/dist/
+
+# Bundled third-party tools are downloaded at package time, not committed
+/bin/
+
+# Editor / OS clutter
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.DS_Store
+
+# Secrets and signing keys — never commit
+.env
+.env.*
+*.pem
+*.pfx
+*.p12
+*.key
+*.snk
+/keys/
