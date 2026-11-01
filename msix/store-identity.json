@@ -1,0 +1,6 @@
+{
+  "_comment": "Copy these three values from Partner Center > the app > Product identity. Until then the placeholders build a test package that only installs in Developer Mode.",
+  "IdentityName": "MohammadIbrahim.ZavyxVideoEditor",
+  "Publisher": "CN=Zavyx Test",
+  "PublisherDisplayName": "Mohammad Ibrahim"
+}
