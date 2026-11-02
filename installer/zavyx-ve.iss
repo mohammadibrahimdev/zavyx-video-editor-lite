@@ -11,6 +11,10 @@
 #ifndef Arch
   #define Arch "x64"
 #endif
+; Label names the files: x64, x86, win7-x64 or win7-x86.
+#ifndef Label
+  #define Label Arch
+#endif
 #define AppName "Zavyx Video Editor"
 
 [Setup]
@@ -31,7 +35,7 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 #endif
 OutputDir=..\dist
-OutputBaseFilename=ZavyxVE-Setup-{#AppVersion}-{#Arch}
+OutputBaseFilename=ZavyxVE-Setup-{#AppVersion}-{#Label}
 SetupIconFile=..\assets\zavyx-ve.ico
 UninstallDisplayIcon={app}\ZavyxVE.exe
 UninstallDisplayName={#AppName}
@@ -46,7 +50,7 @@ ChangesAssociations=yes
 Name: "desktopicon"; Description: "Create a desktop shortcut"; GroupDescription: "Shortcuts:"
 
 [Files]
-Source: "..\dist\staging-{#Arch}\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
+Source: "..\dist\staging-{#Label}\*"; DestDir: "{app}"; Flags: recursesubdirs ignoreversion
 
 [Icons]
 Name: "{group}\Zavyx VE"; Filename: "{app}\ZavyxVE.exe"

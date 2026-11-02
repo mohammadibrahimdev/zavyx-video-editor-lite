@@ -15,7 +15,9 @@
 [CmdletBinding()]
 param(
     [switch]$NoTools,
-    [switch]$NoInstaller
+    [switch]$NoInstaller,
+    # Windows 7 builds (Rust's *-win7-windows-msvc targets; needs nightly with rust-src).
+    [switch]$Win7
 )
 
 $ErrorActionPreference = "Stop"
@@ -48,12 +50,15 @@ if (-not $iscc) {
 }
 
 foreach ($arch in "x64", "x86") {
-    $target = if ($arch -eq "x64") { "x86_64-pc-windows-msvc" } else { "i686-pc-windows-msvc" }
-    Write-Host "=== Building $arch ($target) ==="
-    cargo build --release --target $target
+    $cpu = if ($arch -eq "x64") { "x86_64" } else { "i686" }
+    $label = if ($Win7) { "win7-$arch" } else { $arch }
+    $target = if ($Win7) { "$cpu-win7-windows-msvc" } else { "$cpu-pc-windows-msvc" }
+    Write-Host "=== Building $label ($target) ==="
+    if ($Win7) { cargo +nightly build -Z build-std=std,panic_abort --release --target $target }
+    else { cargo build --release --target $target }
     if ($LASTEXITCODE -ne 0) { throw "cargo build failed for $target" }
 
-    $staging = Join-Path $dist "staging-$arch"
+    $staging = Join-Path $dist "staging-$label"
     if (Test-Path $staging) { Remove-Item -Recurse -Force $staging }
     New-Item -ItemType Directory -Force -Path $staging | Out-Null
     foreach ($exe in "ZavyxVE.exe", "zavyx-ve-cli.exe") {
@@ -63,16 +68,16 @@ foreach ($arch in "x64", "x86") {
     else { Write-Warning "bin\ffmpeg.exe missing: the app will not open media without it." }
     Copy-Item LICENSE-MIT, LICENSE-APACHE, THIRD-PARTY-NOTICES.md $staging
 
-    $portable = Join-Path $dist "ZavyxVE-$version-$arch-portable.zip"
+    $portable = Join-Path $dist "ZavyxVE-$version-$label-portable.zip"
     Remove-Item $portable -ErrorAction SilentlyContinue
     Compress-Archive -Path "$staging\*" -DestinationPath $portable
     Write-Host "Wrote $portable"
 
     if (-not $NoInstaller) {
         if ($iscc) {
-            & $iscc "/DAppVersion=$version" "/DArch=$arch" installer\zavyx-ve.iss
+            & $iscc "/DAppVersion=$version" "/DArch=$arch" "/DLabel=$label" installer\zavyx-ve.iss
             if ($LASTEXITCODE -ne 0) { throw "Inno Setup failed" }
-            Write-Host "Wrote dist\ZavyxVE-Setup-$version-$arch.exe"
+            Write-Host "Wrote dist\ZavyxVE-Setup-$version-$label.exe"
         } else {
             Write-Warning "Inno Setup (iscc) not found; skipped the $arch installer. GitHub Actions builds it on release."
         }

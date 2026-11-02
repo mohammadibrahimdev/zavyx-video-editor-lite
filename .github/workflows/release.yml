@@ -32,6 +32,12 @@ jobs:
       - name: Run tests (with the bundled ffmpeg)
         run: cargo test --workspace
 
+      - name: Build Windows 7 files
+        shell: pwsh
+        run: |
+          rustup toolchain install nightly --profile minimal --component rust-src
+          ./scripts/package.ps1 -Win7
+
       - name: Publish GitHub Release
         uses: softprops/action-gh-release@v2
         with:
@@ -41,6 +47,7 @@ jobs:
             ## Download
             - **ZavyxVE-Setup-*-x64.exe** — recommended for 64-bit Windows 10/11.
             - **ZavyxVE-Setup-*-x86.exe** — 32-bit build for older PCs.
+            - **ZavyxVE-Setup-*-win7-x64.exe / -win7-x86.exe** — for Windows 7 (64-bit / 32-bit).
             - **ZavyxVE-*-portable.zip** — no install. Unzip and run `ZavyxVE.exe`.
           files: |
             dist/ZavyxVE-Setup-*.exe
