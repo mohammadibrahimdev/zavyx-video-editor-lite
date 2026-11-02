@@ -14,7 +14,7 @@
 <p align="center">
   <a href="https://github.com/mohammadibrahimdev/zavyx-video-editor-lite/releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/mohammadibrahimdev/zavyx-video-editor-lite?label=download&color=6d4aff"></a>
   <a href="LICENSE-MIT"><img alt="MIT OR Apache-2.0" src="https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-6d4aff"></a>
-  <img alt="Windows 10/11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-6d4aff">
+  <img alt="Windows 7/10/11" src="https://img.shields.io/badge/Windows-7%20%7C%2010%20%7C%2011-6d4aff">
 </p>
 
 <p align="center">
@@ -47,6 +47,8 @@
 
 1. Go to the **[latest release](https://github.com/mohammadibrahimdev/zavyx-video-editor-lite/releases/latest)**.
 2. Download **`ZavyxVE-Setup-x.y.z-x64.exe`** (or **`-x86.exe`** for 32-bit Windows builds) and run it. No admin rights needed.
+
+**Windows 7?** Download **`ZavyxVE-Setup-x.y.z-win7-x64.exe`** (or **`-win7-x86.exe`** for 32-bit Windows 7) instead.
 
 Prefer no installer? Download the **portable ZIP**, unzip it anywhere and run `ZavyxVE.exe`.
 
