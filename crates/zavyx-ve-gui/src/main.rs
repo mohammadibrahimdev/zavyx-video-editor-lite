@@ -13,7 +13,7 @@ use zavyx_ve_render::{export, mixer};
 
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 pub const AUTHOR_URL: &str = "https://github.com/mohammadibrahimdev";
-pub const REPO_URL: &str = "https://github.com/mohammadibrahimdev/zavyx-video-editor";
+pub const REPO_URL: &str = "https://github.com/mohammadibrahimdev/zavyx-video-editor-lite";
 
 fn main() -> eframe::Result<()> {
     env_logger::init();

@@ -16,8 +16,8 @@ edition = "2021"
 rust-version = "1.80"
 authors = ["Mohammad Ibrahim <https://github.com/mohammadibrahimdev>"]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/mohammadibrahimdev/zavyx-video-editor"
-homepage = "https://github.com/mohammadibrahimdev/zavyx-video-editor"
+repository = "https://github.com/mohammadibrahimdev/zavyx-video-editor-lite"
+homepage = "https://github.com/mohammadibrahimdev/zavyx-video-editor-lite"
 publish = false
 
 [workspace.dependencies]

@@ -1,24 +1,30 @@
 <p align="center">
-  <img src="assets/logo-256.png" width="120" alt="Zavyx VE logo">
+  <img src="assets/logo-256.png" width="120" alt="Zavyx VE Lite logo">
 </p>
 
-<h1 align="center">Zavyx Video Editor</h1>
+<h1 align="center">Zavyx VE Lite</h1>
 
-<p align="center"><sub>Zavyx VE · part of the <a href="https://github.com/mohammadibrahimdev/zavyx">Zavyx</a> family of free tools</sub></p>
+<p align="center"><sub>The lightweight Zavyx Video Editor · part of the <a href="https://github.com/mohammadibrahimdev/zavyx">Zavyx</a> family of free tools</sub></p>
 
 <p align="center">
-  <b>Free video editor for Windows — 64-bit and 32-bit.</b><br>
+  <b>A light, free and open-source video editor for Windows — 64-bit and 32-bit.</b><br>
   Timeline editing · titles · transitions · effects & filters · export to MP4 · no watermark, no account, no tracking.
 </p>
 
 <p align="center">
-  <a href="https://github.com/mohammadibrahimdev/zavyx-video-editor/releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/mohammadibrahimdev/zavyx-video-editor?label=download&color=6d4aff"></a>
+  <a href="https://github.com/mohammadibrahimdev/zavyx-video-editor-lite/releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/mohammadibrahimdev/zavyx-video-editor-lite?label=download&color=6d4aff"></a>
   <a href="LICENSE-MIT"><img alt="MIT OR Apache-2.0" src="https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-6d4aff"></a>
   <img alt="Windows 10/11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-6d4aff">
 </p>
 
 <p align="center">
-  <img src="docs/screenshot.png" width="820" alt="Zavyx VE editor window">
+  Want colour grading, scopes, captions and pro editing tools? Get the full
+  <b><a href="https://github.com/mohammadibrahimdev/zavyx-video-editor">Zavyx Video Editor</a></b>.
+  Zavyx VE Lite is smaller and runs on PCs whose graphics card has no DirectX 12.
+</p>
+
+<p align="center">
+  <img src="docs/screenshot.png" width="820" alt="Zavyx VE Lite editor window">
 </p>
 
 ---
@@ -39,7 +45,7 @@
 
 ## ⬇ Download & install
 
-1. Go to the **[latest release](https://github.com/mohammadibrahimdev/zavyx-video-editor/releases/latest)**.
+1. Go to the **[latest release](https://github.com/mohammadibrahimdev/zavyx-video-editor-lite/releases/latest)**.
 2. Download **`ZavyxVE-Setup-x.y.z-x64.exe`** (or **`-x86.exe`** for 32-bit Windows builds) and run it. No admin rights needed.
 
 Prefer no installer? Download the **portable ZIP**, unzip it anywhere and run `ZavyxVE.exe`.
@@ -64,8 +70,8 @@ Prefer no installer? Download the **portable ZIP**, unzip it anywhere and run `Z
 Requirements: [Rust](https://rustup.rs) (stable) on Windows, and `ffmpeg.exe` in a `bin\` folder at the repo root (for example the [gyan.dev essentials build](https://www.gyan.dev/ffmpeg/builds/)).
 
 ```bash
-git clone https://github.com/mohammadibrahimdev/zavyx-video-editor.git
-cd zavyx-video-editor
+git clone https://github.com/mohammadibrahimdev/zavyx-video-editor-lite.git
+cd zavyx-video-editor-lite
 cargo build --release
 cargo test --workspace
 ```
@@ -104,7 +110,7 @@ This updates the version, runs the tests, tags `v0.2.0` and pushes. GitHub Actio
 
 ## 🤝 Contributing
 
-Bug reports, ideas and pull requests are welcome — please open an [issue](https://github.com/mohammadibrahimdev/zavyx-video-editor/issues).
+Bug reports, ideas and pull requests are welcome — please open an [issue](https://github.com/mohammadibrahimdev/zavyx-video-editor-lite/issues).
 
 ## 👤 Author
 
