@@ -16,5 +16,5 @@ runs it as an external tool; it keeps its own licence.
 - **Phosphor Icons** (icon font, via the `egui-phosphor` crate) — MIT licence — https://phosphoricons.com
 - Titles use fonts already installed with Windows (Segoe UI, Arial, …); no fonts are shipped.
 
-Zavyx VE itself is freeware under the Zavyx Freeware License (see `LICENSE`). Rust crate
+Zavyx VE itself is open source under MIT OR Apache-2.0 (see `LICENSE-MIT`, `LICENSE-APACHE`). Rust crate
 dependencies are listed in `Cargo.lock` with their own licences.

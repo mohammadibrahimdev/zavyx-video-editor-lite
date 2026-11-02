@@ -61,7 +61,7 @@ foreach ($arch in "x64", "x86") {
     }
     if (Test-Path "$bin\ffmpeg.exe") { Copy-Item "$bin\ffmpeg.exe" $staging }
     else { Write-Warning "bin\ffmpeg.exe missing: the app will not open media without it." }
-    Copy-Item LICENSE, THIRD-PARTY-NOTICES.md $staging
+    Copy-Item LICENSE-MIT, LICENSE-APACHE, THIRD-PARTY-NOTICES.md $staging
 
     $portable = Join-Path $dist "ZavyxVE-$version-$arch-portable.zip"
     Remove-Item $portable -ErrorAction SilentlyContinue

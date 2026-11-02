@@ -213,7 +213,7 @@ fn about(ctx: &egui::Context, app: &mut ZavyxApp) {
                 ui.hyperlink_to("github.com/mohammadibrahimdev", crate::AUTHOR_URL);
                 ui.hyperlink_to("Project repository", crate::REPO_URL);
                 ui.add_space(6.0);
-                ui.label(style::dim("Freeware · free forever · no ads, no watermark, no telemetry"));
+                ui.label(style::dim("Free & open source · no ads, no watermark, no telemetry"));
                 ui.label(style::dim("Video and audio processing by FFmpeg (ffmpeg.org)"));
                 ui.add_space(6.0);
             });

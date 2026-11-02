@@ -44,7 +44,7 @@ if (Test-Path $layout) {
     Remove-Item -Recurse -Force $layout
 }
 New-Item -ItemType Directory -Force -Path $layout | Out-Null
-Copy-Item "target\$target\release\ZavyxVE.exe", bin\ffmpeg.exe, LICENSE, THIRD-PARTY-NOTICES.md $layout
+Copy-Item "target\$target\release\ZavyxVE.exe", bin\ffmpeg.exe, LICENSE-MIT, LICENSE-APACHE, THIRD-PARTY-NOTICES.md $layout
 Copy-Item msix\Assets $layout -Recurse
 
 $manifest = (Get-Content msix\AppxManifest.xml -Raw).
